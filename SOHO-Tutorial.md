@@ -1,10 +1,13 @@
 # SOHO Network Tutorial - Cisco Packet Tracer
 
 ## Overview
+
 This tutorial guides you through creating a Small Office/Home Office (SOHO) network using Cisco Packet Tracer. You'll learn to design, configure, and troubleshoot a typical small business network infrastructure.
 
 ## Learning Objectives
+
 By completing this tutorial, you will:
+
 - Understand SOHO network topology design
 - Configure basic router and switch settings
 - Set up DHCP services
@@ -13,7 +16,9 @@ By completing this tutorial, you will:
 - Test network connectivity
 
 ## Network Requirements
+
 Our SOHO network will include:
+
 - 1 Router (ISR 2911 or similar)
 - 1 Switch (2960 or similar)
 - 1 Wireless Access Point
@@ -21,10 +26,14 @@ Our SOHO network will include:
 - 1 Server (for DHCP/DNS)
 - 1 Printer
 
+> **💡 Additional Lab Files**: You can download more advanced SOHO network scenarios and pre-configured lab files from [Cisco NetAcad Lab Downloads](https://www.netacad.com/resources/lab-downloads) to practice with different configurations and challenges.
+
 ## Step-by-Step Tutorial
 
 ### Step 1: Network Planning
+
 **IP Address Scheme:**
+
 - Network: 192.168.1.0/24
 - Router LAN IP: 192.168.1.1
 - DHCP Pool: 192.168.1.100-192.168.1.200
@@ -34,6 +43,7 @@ Our SOHO network will include:
 ### Step 2: Physical Topology Setup
 
 1. **Add Devices to Workspace:**
+
    - Router: ISR 2911
    - Switch: 2960-24TT
    - Wireless Access Point: WRT300N
@@ -59,7 +69,7 @@ Our SOHO network will include:
 Router> enable
 Router# configure terminal
 Router(config)# hostname SOHO-Router
-SOHO-Router(config)# 
+SOHO-Router(config)#
 
 ! Configure WAN interface (to Internet)
 SOHO-Router(config)# interface GigabitEthernet0/0
@@ -103,7 +113,7 @@ SOHO-Router# write memory
 Switch> enable
 Switch# configure terminal
 Switch(config)# hostname SOHO-Switch
-SOHO-Switch(config)# 
+SOHO-Switch(config)#
 
 ! Configure VLANs (optional for advanced setup)
 SOHO-Switch(config)# vlan 10
@@ -131,6 +141,7 @@ SOHO-Switch# write memory
 ### Step 5: Wireless Access Point Configuration
 
 1. **Access WAP GUI:**
+
    - Connect PC to switch
    - Open web browser
    - Navigate to WAP IP (usually 192.168.1.245 by default)
@@ -144,6 +155,7 @@ SOHO-Switch# write memory
 ### Step 6: Server Configuration
 
 1. **Static IP Configuration:**
+
    - IP: 192.168.1.10
    - Subnet: 255.255.255.0
    - Gateway: 192.168.1.1
@@ -157,11 +169,13 @@ SOHO-Switch# write memory
 ### Step 7: Client Configuration
 
 **For PCs:**
+
 1. Set to obtain IP automatically (DHCP)
 2. Test connectivity with ping commands
 3. Access web services
 
 **For Laptops:**
+
 1. Configure wireless adapter
 2. Connect to SOHO-WiFi network
 3. Enter wireless password
@@ -170,6 +184,7 @@ SOHO-Switch# write memory
 ### Step 8: Testing and Verification
 
 1. **Connectivity Tests:**
+
    ```
    PC> ipconfig
    PC> ping 192.168.1.1
@@ -178,6 +193,7 @@ SOHO-Switch# write memory
    ```
 
 2. **DHCP Verification:**
+
    ```
    SOHO-Router# show ip dhcp binding
    SOHO-Router# show ip dhcp pool
@@ -190,16 +206,19 @@ SOHO-Switch# write memory
 ## Troubleshooting Common Issues
 
 ### No Internet Access
+
 - Check NAT configuration
 - Verify default route
 - Test DNS resolution
 
 ### DHCP Not Working
+
 - Check DHCP pool configuration
 - Verify excluded addresses
 - Check interface IP helpers
 
 ### Wireless Connection Issues
+
 - Verify SSID broadcast
 - Check security settings
 - Confirm channel settings
@@ -207,6 +226,7 @@ SOHO-Switch# write memory
 ## Advanced Configuration (Optional)
 
 ### Port Security
+
 ```cisco
 SOHO-Switch(config)# interface FastEthernet0/2
 SOHO-Switch(config-if)# switchport port-security
@@ -215,6 +235,7 @@ SOHO-Switch(config-if)# switchport port-security violation shutdown
 ```
 
 ### Access Control List (ACL)
+
 ```cisco
 SOHO-Router(config)# access-list 100 deny tcp any any eq 23
 SOHO-Router(config)# access-list 100 permit ip any any
@@ -242,8 +263,30 @@ SOHO-Router(config-if)# ip access-group 100 in
     [Laptop1] [Laptop2] - Wireless DHCP
 ```
 
+## Additional Resources
+
+### Official Cisco Resources
+
+- [Cisco NetAcad Lab Downloads](https://www.netacad.com/resources/lab-downloads) - Official lab files and packet tracer activities
+- [Cisco Packet Tracer Tutorials](https://www.netacad.com/courses/packet-tracer) - Comprehensive tutorials and guides
+- [Cisco Command Reference](https://www.cisco.com/c/en/us/support/docs/ios-nx-os-software/ios-software-releases-122-mainline/12195-config-copy.html) - Official command documentation
+
+### Configuration References
+
+- [SOHO Network Best Practices](https://www.cisco.com/c/en/us/solutions/small-business/networking.html)
+- [Wireless Security Guidelines](https://www.cisco.com/c/en/us/support/docs/wireless/aironet-1200-series/23231-wireless-security.html)
+- [NAT Configuration Guide](https://www.cisco.com/c/en/us/support/docs/ip/network-address-translation-nat/26704-nat-faq-00.html)
+
+### Practice Labs
+
+- Download additional SOHO scenarios from NetAcad lab downloads
+- Practice with different router models and configurations
+- Experiment with advanced security features
+
 ## Summary
+
 This SOHO network tutorial covers:
+
 - Basic router and switch configuration
 - DHCP service setup
 - Wireless network implementation
@@ -252,6 +295,7 @@ This SOHO network tutorial covers:
 - Testing and troubleshooting procedures
 
 ## Practice Exercises
+
 1. Add a guest wireless network with different security settings
 2. Implement VLANs to separate different types of traffic
 3. Configure port security on switch interfaces
@@ -259,4 +303,5 @@ This SOHO network tutorial covers:
 5. Implement access control lists for security
 
 ---
-*Created for educational purposes using Cisco Packet Tracer*
+
+_Created for educational purposes using Cisco Packet Tracer_
