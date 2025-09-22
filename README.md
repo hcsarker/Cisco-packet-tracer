@@ -5,6 +5,7 @@ This repository contains Cisco Packet Tracer activities and network simulation f
 ## Contents
 
 - **1.1.6-packet-tracer-tutored-activitys-logical-and-physical-mode-exploration.pksz** - Tutored activity exploring logical and physical modes in Packet Tracer
+- **SOHO-Tutorial.md** - Complete tutorial for creating a Small Office/Home Office network with step-by-step configuration guide
 
 ## About Cisco Packet Tracer
 
@@ -53,6 +54,8 @@ These activities help you learn:
 
 ```
 ├── README.md
+├── LICENSE
+├── SOHO-Tutorial.md
 └── 1.1.6-packet-tracer-tutored-activitys-logical-and-physical-mode-exploration.pksz
 ```
 
