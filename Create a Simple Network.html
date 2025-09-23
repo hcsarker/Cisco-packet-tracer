@@ -1,0 +1,716 @@
+<!DOCTYPE html><html><head>
+<style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 1rem;
+      }
+      ol,
+      ul {
+        margin-bottom: 0in;
+      }
+      table {
+        margin-top: 1rem;
+        border: 1px solid gray;
+        width: 7in;
+        border-collapse: collapse;
+      }
+
+      table > thead > tr > .openTableTextBox__table-header-data {
+        text-align: center;
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        margin-left: 0in;
+        text-align: center;
+        line-height: 115%;
+        page-break-after: avoid;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        font-weight: bold;
+        background: #dbe5f1;
+        padding: 0.5rem;
+      }
+      .openTableTextBox__answerText
+        table
+        > thead
+        > tr
+        > .openTableTextBox__table-header-data {
+        background: #f2dbdb !important;
+      }
+      .openTextBox__textArea-container {
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        width: 50%;
+      }
+      .openTableTextBox__fieldset {
+        padding: 5px;
+      }
+      td {
+        margin-top: 3pt;
+        margin-right: 0in;
+        margin-bottom: 3pt;
+        margin-left: 0in;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        width: 98.85pt;
+        border: solid windowtext 1pt;
+        border-top: none;
+        padding: 0.7pt 5.75pt 0.7pt 5.75pt;
+      }
+      textarea {
+        width: 100%;
+      }
+      .answergray {
+        padding: 0.2rem;
+      }
+
+      .openTableTextBox__widget {
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        margin-left: 0.25in;
+      }
+
+      .show-answer,
+      .hide-answer {
+        padding: 0.5rem 1rem;
+        background-color: #3d692b;
+        color: #fff;
+        border: 0px;
+        cursor: pointer;
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .openTextBoxController__button-container {
+        display: flex;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .openTextBoxController__button-container .btn-text {
+        margin: 10px;
+      }
+
+      .btn-text {
+        border: 0px;
+        padding: 0.5rem 1rem;
+        background-color: #3d692b;
+        color: #fff;
+        border-radius: 0;
+        cursor: pointer;
+      }
+
+      .u-display-none {
+        display: none;
+      }
+      .openTextBox__postText, openTableTextBox__postText {
+        margin-top: 0.5rem;
+      }
+      .edit-comment {
+        display: none;
+      }
+      .js-heading-inner {
+        display: none;
+      }
+      .block__title-inner,
+      .article__title-inner {
+        display: block;
+        font-size: 1.5em;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+      }
+      h2{
+        font-size: 1.25em;
+      }
+      h3{
+        font-size: 1.125em;
+      }
+      .table
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > th {
+        border: solid windowtext 1pt;
+      }
+      table tbody tr th, table thead tr th{
+        border: solid windowtext 1pt;
+        background-color: #d6d8dc;
+      }
+      .openTableTextBox__answerText
+        table
+        > thead
+        > tr
+        > .openTableTextBox__table-header-data {
+        background: #f2dbdb !important;
+      }
+      .command-output > .table-inner > .table-wrapper > .table-widget > table,
+      .command-output
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > td,
+      .command-output
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > th {
+        border: none !important;
+        text-align: right !important;
+      }
+      .simple-table > .table-inner > .table-wrapper{
+        margin-left: 1.5rem;
+      }
+      .openTextBox__widget {
+        margin-left: 1.5rem;
+      }
+      img {
+        width: 30%;
+        height: auto;
+        margin-top: 1rem;
+        margin-left: 3rem;
+      }
+      .answergray {
+        background-color: #ccc;
+      }
+      .openTableTextBox__widget > .answergray {
+        background-color: #fff !important;
+      }
+      li > ul,ol > li{
+        margin-left: 0px !important;
+      }
+      img {
+        width: 30%;
+        height: auto;
+        margin-top: 1rem;
+        margin-left: 3rem;
+      }
+      
+      .component__title{
+        font-family: inherit;
+        font-size: 1.65em;
+        font-weight: 600;
+        line-height: 1.5;
+      }
+
+      .component__body {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      .accessibility-completion-indicator{
+        display: none;
+      }
+    </style>
+
+</head><body><!---->
+            <div class="article 66e32670-dc3e-4ca9-a659-074904a2dec7 remove-padding-top remove-padding-bottom is-complete ">
+                <div class="article__inner">
+                <div class=" no-adaptive-scroll">
+                    <!--?lit$652443$-->
+                        <div class=""> 
+                            <base-view type="article" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="article__header-wrapper remove-padding-top remove-padding-bottom ">
+        <div class="article__header ">
+              <div class="article__header-inner ">
+                  
+                    <!--?lit$652443$--> <div class=" article__title ">
+                      <!--?lit$652443$--><heading-view aria-hidden="true" id="66e32670-dc3e-4ca9-a659-074904a2dec7-heading-view" headingtitle="Packet Tracer - Create a Simple Network" modelid="66e32670-dc3e-4ca9-a659-074904a2dec7" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="js-heading is-complete">
+        <div class="js-heading-inner" role="heading" id="article-heading" aria-level="2">
+        <span class="aria-label"> <!--?lit$652443$-->Complete &nbsp;<!--?lit$652443$-->Packet Tracer - Create a Simple Network</span>
+        </div>
+      </div>
+    </heading-view>
+                        <div tabindex="0" role="heading" class="article__title-inner " aria-level="2">
+                        <span class="accessibility-completion-indicator"><!--?lit$652443$-->Complete </span>
+                        <!--?lit$652443$-->Packet Tracer - Create a Simple Network</div>
+                      </div>
+                  <!--?lit$652443$-->
+                  <!--?lit$652443$-->
+                  <!--?lit$652443$-->
+                  <!--?lit$652443$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                            <div class="block__container " style="">
+                                <!--?lit$652443$--><!---->
+                                    <block-view modelid="041d4ac9-c416-42f5-923c-d028c5aa4d94" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 33.3333%;"><!---->
+                
+                <div data-socialgoodpulse-id="041d4ac9-c416-42f5-923c-d028c5aa4d94" class="041d4ac9-c416-42f5-923c-d028c5aa4d94 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="041d4ac9-c416-42f5-923c-d028c5aa4d94" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$652443$-->
+                  <!--?lit$652443$-->
+                  <!--?lit$652443$-->
+                  <!--?lit$652443$-->
+                  <!--?lit$652443$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$652443$--><!----><text-view modelid="a816a7a0-5d91-4c93-bf3e-44e96398bee9" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="a816a7a0-5d91-4c93-bf3e-44e96398bee9" class="component text a816a7a0-5d91-4c93-bf3e-44e96398bee9  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$652443$-->
+                  <!--?lit$652443$-->
+                  <!--?lit$652443$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$652443$--><h2>Objectives</h2> <p class="BodyTextL25">In this activity, you will build a simple network in Packet Tracer in the Logical Workspace.</p> <p class="BodyTextL25Bold">Part 1: Build a Simple Network</p> <p class="BodyTextL25Bold">Part 2: Configure the End Devices and Verify Connectivity</p> <h2>Instructions</h2> <h2>Part 1: Build a Simple Network</h2> <p class="BodyTextL25">In this part, you will build a simple network by deploying and connecting the network devices in the Logical Workspace.</p> <h3>Step 1: Add network devices to the workspace.</h3> <p class="BodyTextL25">In this step, you will add a PC, laptop, and a cable modem to the Logical Workspace.</p> <p class="BodyTextL25">A cable modem is a hardware device that allows communications with an Internet Service Provider (ISP). The coaxial cable from the ISP is connected to the cable modem, and an Ethernet cable from the local network is also connected. The cable modem converts the coaxial connection to an Ethernet connection.</p> <p class="BodyTextL25">Using the Device-Type Selection Box, add the following devices to the workspace. The category and sub-category associated with the device are listed below:</p> <p class="Bulletlevel1"><span style="font-size:7.0pt;font-family:Webdings">=<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp; </span></span><b>PC</b>: End Devices &gt; End Devices &gt; PC</p> <p class="Bulletlevel1"><span style="font-size:7.0pt;font-family:Webdings">=<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp; </span></span><b>Laptop</b>: End Devices &gt; End Devices &gt; Laptop</p> <p class="Bulletlevel1"><span style="font-size:7.0pt;font-family:Webdings">=<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp; </span></span><b>Cable Modem</b>: Network Devices &gt; WAN Emulation &gt; Cable Modem</p> <h3>Step 2: Change display names of the nework devices.</h3> <p class="SubStepAlpha">a.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>To change the display names of the network devices, click the device icon in the Logical Workspace.</p> <p class="SubStepAlpha">b.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click the <b>Config</b> tab in the device configuration window.</p> <p class="SubStepAlpha">c.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Enter the new name of the newly added device into the <b>Display Name</b> field: PC, Laptop, and Cable Modem.</p> <h3>Step 3: Add the physical cabling between devices on the workspace.</h3> <p class="BodyTextL25">Using the Device-Type Selection Box, add the physical cabling between devices on the workspace.</p> <p class="SubStepAlpha">a.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>The PC will need a copper straight-through cable to connect to the wireless router. Using the Device-Type Selection Box, click <b>Connections</b> (lightning bolt icon). Select the copper straight-through cable in the Device-Specific Selection Box and attach it to the <b>FastEthernet0</b> interface of the PC and the <b>Ethernet 1</b> interface of the wireless router.</p> <p class="SubStepAlpha">b.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>The wireless router will need a copper straight-through cable to connect to the cable modem. Select the copper straight-through cable in the Device-Specific Selection Box and attach it to the internet interface of the wireless router and the <b>Port 1</b> interface of the cable modem.</p> <p class="SubStepAlpha">c.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>The cable modem will need a Coaxial cable to connect to the internet cloud. Select the Coaxial cable in the Device-Specific Selection Box and attach it to the <b>Port 0</b> interface of the cable modem and the <b>Coaxial 7</b> interface of the internet cloud.</p> <h2>Part 2: Configure the End Devices and Verify Connectivity</h2> <p class="BodyTextL25">In this part, you will connect a PC and a laptop to the Wireless router. The PC will be connected to the network using an Ethernet cable. For the Laptop, you will replace the wired Ethernet network interface card (NIC) with a wireless NIC and connect the Laptop to the router wirelessly.</p> <p class="BodyTextL25">After both end devices are connected to the network, you will verify connectivity to cisco.srv. The PC and the Laptop will each be assigned an IP (Internet Protocol) address. Internet Protocol is a set of rules for routing and addressing data on the internet. The IP addresses are used to identify the devices on a network and allow the devices to connect and transfer data on a network.</p> <h3>Step 1: Configure the PC.</h3> <p class="BodyTextL25">You will configure the PC for the wired network in this step.</p> <p class="SubStepAlpha">a.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click the <b>PC</b>. In the <b>Desktop</b> tab, navigate to <b>IP Configuration</b> to verify that DHCP is enabled and the PC has received an IP address.</p> <p class="BodyTextL50">Select <b>DHCP</b> for the IP Configuration heading if you do not see an IP address for the IPv4 Address field. Observe the process as the PC is receiving an IP address from the DHCP server.</p> <p class="BodyTextL50">DHCP stands for dynamic host configuration protocol. This protocol assigns IP addresses to devices dynamically. In this simple network, the Wireless Router is configured to assign IP addresses to devices that request IP addresses. If DHCP is disabled, you will need to assign an IP address and configure all the necessary information to communicate with other devices on the network and the internet.</p> <p class="SubStepAlpha">b.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Close <b>IP Configuration</b>. In the <b>Desktop</b> tab, click <b>Command Prompt</b>.</p> <p class="SubStepAlpha">c.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>At the prompt, enter <b>ipconfig /all</b> to review the IPv4 addressing information from the DHCP server. The PC should have received an IPv4 address in the 192.168.0.x range. </p> <p class="SubStepAlpha" style="text-indent:0in"><b>Note:</b> There are two types of IP addresses: IPv4 and IPv6. An IPv4 (internet protocol version 4) address is a string of numbers in the form of x.x.x.x as you have been using in this lab. As the internet grew, the need for more IP addresses became necessary. So IPv6 (internet protocol version 6) was introduced in the late 1990s to address the limitations of IPv4. The details of IPv6 addressing are beyond the scope of this activity.</p> <p class="SubStepAlpha">d.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Test connectivity to the cisco.srv from the PC. From the command prompt, issue the command <b>ping cisco.srv</b>. It may take a few seconds for the ping to return. Four replies should be received.</p> <h3>Step 2: Configure the Laptop.</h3> <p class="BodyTextL25">In this step, you will configure the Laptop to access the wireless network.</p> <p class="SubStepAlpha">a.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Click <b>Laptop</b>, and select the <b>Physical</b> tab.</p> <p class="SubStepAlpha">b.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>In the <b>Physical</b> tab, you will need to remove the Ethernet copper module and replace it with the Wireless WPC300N module.</p> <p class="SubStepNum">1)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Power off <b>Laptop</b> by clicking the power button on the side of the laptop.</p> <p class="SubStepNum">2)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Remove the currently installed Ethernet copper module by clicking on the module on the side of the laptop and dragging it to the <b>MODULES</b> pane on the left of the laptop window.</p> <p class="SubStepNum">3)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Install the wireless <b>WPC300N</b> module by clicking it in the <b>MODULES</b> pane and dragging it to the empty module port on the side of the Laptop.</p> <p class="SubStepNum">4)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span>Power on the <b>Laptop</b> by clicking the Laptop power button again.</p> <p class="SubStepAlpha">c.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>With the wireless module installed, connect the Laptop to the wireless network. Click the <b>Desktop</b> tab and select the <b>PC Wireless</b>.</p> <p class="SubStepAlpha">d.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Select the <b>Connect </b>tab. After a slight delay, the wireless network <b>HomeNetwork</b> will be visible in the list of wireless networks. Click <b>Refresh</b> if necessary to see the list of available networks. Select the <b>HomeNetwork</b>. Click <b>Connect</b>. </p> <p class="SubStepAlpha">e.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Close <b>PC Wireless</b>. Select <b>Web Browser</b> in the Desktop tab.</p> <p class="SubStepAlpha">f.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>In the Web Browser, navigate to <b>cisco.srv</b>.</p> <h2>Reflection</h2> <p class="BodyTextL25">Now that you have verified connectivity to cisco.srv, use the command <b>ipconfig</b> from the Command Prompt to fill out the IP addressing table below:</p></div>
+                      </div>
+                    </div>
+                  <!--?lit$652443$-->
+                  <!--?lit$652443$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="73aa6af0-88fa-4df6-8290-fdea4e8c187d" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 33.3333%;"><!---->
+                
+                <div data-socialgoodpulse-id="73aa6af0-88fa-4df6-8290-fdea4e8c187d" class="73aa6af0-88fa-4df6-8290-fdea4e8c187d block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="73aa6af0-88fa-4df6-8290-fdea4e8c187d" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$652443$-->
+                  <!--?lit$652443$-->
+                  <!--?lit$652443$-->
+                  <!--?lit$652443$-->
+                  <!--?lit$652443$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$652443$--><!----><opentabletextbox-view modelid="eba9dac9-8a22-4bdb-91d3-3b023c065aac" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+      <div class="component">
+        <div class="opentabletextbox-inner component__inner">
+          <div data-socialgoodpulse-id="eba9dac9-8a22-4bdb-91d3-3b023c065aac" class="component opentabletextbox eba9dac9-8a22-4bdb-91d3-3b023c065aac  is-full is-complete  ">
+            <div class="component__header-container">
+              <div data-socialgoodpulse-id="eba9dac9-8a22-4bdb-91d3-3b023c065aac" class="opentabletextbox ">
+                <base-view type="component" lowercase_component="openTableTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTableTextBox__header">
+              <div class="component__header-inner openTableTextBox__header-inner">
+                  
+                    <!--?lit$652443$-->
+                  <!--?lit$652443$-->
+                  <!--?lit$652443$-->
+                  <!--?lit$652443$-->
+                  <!--?lit$652443$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+              </div>
+            </div>
+            <div class="component__widget opentabletextBox__widget question-container ">
+              <div class="openTableTextBox__preText">
+                <!--?lit$652443$-->
+              </div>
+              <div class="opentabletextbox-container openTableTextBox__table-container">
+                <table class="opentabletextbox-table" tabindex="0">
+                  <!--?lit$652443$-->
+                        <thead class="openTableTextBox__table-header">
+                          <tr>
+                            <!--?lit$652443$--><!----><th tabindex="0" scope="col"><!--?lit$652443$-->Device</th><!----><!----><th tabindex="0" scope="col"><!--?lit$652443$-->IPv4 Address</th><!----><!----><th tabindex="0" scope="col"><!--?lit$652443$-->Subnet Mask</th><!----><!----><th tabindex="0" scope="col"><!--?lit$652443$-->Default Gateway</th><!---->
+                          </tr>
+                        </thead>
+                  <tbody>
+                    <!--?lit$652443$--><!---->
+                        <tr class="openTableTextBox__table-row ">
+                          <!--?lit$652443$--><!---->
+                              <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                <div class="openTableTextBox__textArea-container">
+                                  <!--?lit$652443$--><div><!--?lit$652443$-->PC</div>
+                                </div>
+                              </td>
+                            <!----><!---->
+                              <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                <div class="openTableTextBox__textArea-container">
+                                  <!--?lit$652443$-->
+                                        <div class="openTableTextBox__textArea-container">
+                                          <fieldset class="openTableTextBox__fieldset">
+                                            <legend class="openTableTextBox__legend">
+                                              <!--?lit$652443$--><!--?lit$652443$-->Answer Area<!--?-->
+                                            </legend>
+                                            <textarea class="openTableTextBox__textArea" rows="3" name="answerArea" tabindex="0" placeholder="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                                          </fieldset>
+                                        </div>
+                                      
+                                </div>
+                              </td>
+                            <!----><!---->
+                              <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                <div class="openTableTextBox__textArea-container">
+                                  <!--?lit$652443$-->
+                                        <div class="openTableTextBox__textArea-container">
+                                          <fieldset class="openTableTextBox__fieldset">
+                                            <legend class="openTableTextBox__legend">
+                                              <!--?lit$652443$--><!--?lit$652443$-->Answer Area<!--?-->
+                                            </legend>
+                                            <textarea class="openTableTextBox__textArea" rows="3" name="answerArea" tabindex="0" placeholder="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                                          </fieldset>
+                                        </div>
+                                      
+                                </div>
+                              </td>
+                            <!----><!---->
+                              <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                <div class="openTableTextBox__textArea-container">
+                                  <!--?lit$652443$-->
+                                        <div class="openTableTextBox__textArea-container">
+                                          <fieldset class="openTableTextBox__fieldset">
+                                            <legend class="openTableTextBox__legend">
+                                              <!--?lit$652443$--><!--?lit$652443$-->Answer Area<!--?-->
+                                            </legend>
+                                            <textarea class="openTableTextBox__textArea" rows="3" name="answerArea" tabindex="0" placeholder="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                                          </fieldset>
+                                        </div>
+                                      
+                                </div>
+                              </td>
+                            <!---->
+                        </tr>
+                      <!----><!---->
+                        <tr class="openTableTextBox__table-row ">
+                          <!--?lit$652443$--><!---->
+                              <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                <div class="openTableTextBox__textArea-container">
+                                  <!--?lit$652443$--><div><!--?lit$652443$-->Laptop</div>
+                                </div>
+                              </td>
+                            <!----><!---->
+                              <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                <div class="openTableTextBox__textArea-container">
+                                  <!--?lit$652443$-->
+                                        <div class="openTableTextBox__textArea-container">
+                                          <fieldset class="openTableTextBox__fieldset">
+                                            <legend class="openTableTextBox__legend">
+                                              <!--?lit$652443$--><!--?lit$652443$-->Answer Area<!--?-->
+                                            </legend>
+                                            <textarea class="openTableTextBox__textArea" rows="3" name="answerArea" tabindex="0" placeholder="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                                          </fieldset>
+                                        </div>
+                                      
+                                </div>
+                              </td>
+                            <!----><!---->
+                              <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                <div class="openTableTextBox__textArea-container">
+                                  <!--?lit$652443$-->
+                                        <div class="openTableTextBox__textArea-container">
+                                          <fieldset class="openTableTextBox__fieldset">
+                                            <legend class="openTableTextBox__legend">
+                                              <!--?lit$652443$--><!--?lit$652443$-->Answer Area<!--?-->
+                                            </legend>
+                                            <textarea class="openTableTextBox__textArea" rows="3" name="answerArea" tabindex="0" placeholder="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                                          </fieldset>
+                                        </div>
+                                      
+                                </div>
+                              </td>
+                            <!----><!---->
+                              <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                <div class="openTableTextBox__textArea-container">
+                                  <!--?lit$652443$-->
+                                        <div class="openTableTextBox__textArea-container">
+                                          <fieldset class="openTableTextBox__fieldset">
+                                            <legend class="openTableTextBox__legend">
+                                              <!--?lit$652443$--><!--?lit$652443$-->Answer Area<!--?-->
+                                            </legend>
+                                            <textarea class="openTableTextBox__textArea" rows="3" name="answerArea" tabindex="0" placeholder="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                                          </fieldset>
+                                        </div>
+                                      
+                                </div>
+                              </td>
+                            <!---->
+                        </tr>
+                      <!---->
+                  </tbody>
+                </table>
+              </div>
+              <div class="openTableTextBox__answerText answergray openTableTextBox__table-container is-full hide">
+                <table class="opentabletextbox-table openTableTextBox__table-inner" tabindex="0">
+                  <!--?lit$652443$-->
+                        <thead class="openTableTextBox__table-header">
+                          <tr tabindex="0">
+                            <!--?lit$652443$--><!----><th scope="col"><!--?lit$652443$-->Device</th><!----><!----><th scope="col"><!--?lit$652443$-->IPv4 Address</th><!----><!----><th scope="col"><!--?lit$652443$-->Subnet Mask</th><!----><!----><th scope="col"><!--?lit$652443$-->Default Gateway</th><!---->
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <!--?lit$652443$--><!---->
+                                <tr class="openTableTextBox__table-row ">
+                                  <!--?lit$652443$--><!---->
+                                      <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                        <div class="openTableTextBox__textArea-container">
+                                          <div><!--?lit$652443$-->PC</div>
+                                        </div>
+                                      </td>
+                                    <!----><!---->
+                                      <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                        <div class="openTableTextBox__textArea-container">
+                                          <div><!--?lit$652443$-->192.168.0.2</div>
+                                        </div>
+                                      </td>
+                                    <!----><!---->
+                                      <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                        <div class="openTableTextBox__textArea-container">
+                                          <div><!--?lit$652443$-->255.255.255.0</div>
+                                        </div>
+                                      </td>
+                                    <!----><!---->
+                                      <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                        <div class="openTableTextBox__textArea-container">
+                                          <div><!--?lit$652443$-->192.168.0.1</div>
+                                        </div>
+                                      </td>
+                                    <!---->
+                                </tr>
+                              <!----><!---->
+                                <tr class="openTableTextBox__table-row ">
+                                  <!--?lit$652443$--><!---->
+                                      <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                        <div class="openTableTextBox__textArea-container">
+                                          <div><!--?lit$652443$-->Laptop</div>
+                                        </div>
+                                      </td>
+                                    <!----><!---->
+                                      <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                        <div class="openTableTextBox__textArea-container">
+                                          <div><!--?lit$652443$-->192.168.0.3</div>
+                                        </div>
+                                      </td>
+                                    <!----><!---->
+                                      <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                        <div class="openTableTextBox__textArea-container">
+                                          <div><!--?lit$652443$-->255.255.255.0</div>
+                                        </div>
+                                      </td>
+                                    <!----><!---->
+                                      <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                        <div class="openTableTextBox__textArea-container">
+                                          <div><!--?lit$652443$-->192.168.0.1</div>
+                                        </div>
+                                      </td>
+                                    <!---->
+                                </tr>
+                              <!---->
+                      </tbody>
+                </table>
+              </div>
+              <div class="btn__container">
+                <button class="btn-text openTableTextBox__showButton show-answer show"><!--?lit$652443$-->Show Answer</button>
+                <button class="btn-text openTableTextBox__showButton hide-answer hide"><!--?lit$652443$-->Hide Answer</button>
+              </div>
+              <div class="openTableTextBox__postText">
+                <!--?lit$652443$-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </opentabletextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="23a0da75-4713-43d6-a2e0-2dd84c92747a" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 33.3333%;"><!---->
+                
+                <div data-socialgoodpulse-id="23a0da75-4713-43d6-a2e0-2dd84c92747a" class="23a0da75-4713-43d6-a2e0-2dd84c92747a block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="23a0da75-4713-43d6-a2e0-2dd84c92747a" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$652443$-->
+                  <!--?lit$652443$-->
+                  <!--?lit$652443$-->
+                  <!--?lit$652443$-->
+                  <!--?lit$652443$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$652443$--><!----><text-view modelid="e41672d1-185e-4772-8653-f793476d711a" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="e41672d1-185e-4772-8653-f793476d711a" class="component text e41672d1-185e-4772-8653-f793476d711a  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$652443$-->
+                  <!--?lit$652443$-->
+                  <!--?lit$652443$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$652443$--><p class="BodyTextL25">The IP addresses for the end devices can range from 192.168.0.2 – 192.168.0.254. Each NIC will get a unique IP address in the same network. <a name="_Hlk85813096"></a></p> <p class="BodyTextL25">The subnet mask is used to differentiate the host and the network ID portion of the IP address. You can relate the IP address to your street address. The subnet mask defines the length of the street name. The network part of the address is your street, 192.168.0. The house number is the host port of the IP address. For the IP address 192.168.0.2, the house number is 2 and the street is 192.168.0. If there is more than one house on the same street, for example, house number 3, will have an address 192.168.0.3. The maximum number of houses on this street is 253, ranging from 2 to 254.</p> <p class="BodyTextL25">The default gateway is analogous to the street intersection. The traffic from the 192.168.0 street has to exit through the intersection to another street. Another street is another network. In this network, default gateway is the wireless router that directs the traffic from the local network to the cable modem, and the traffic is then sent to the ISP.</p></div>
+                      </div>
+                    </div>
+                  <!--?lit$652443$-->
+                  <!--?lit$652443$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!---->
+                            </div>
+                        </div>
+                        <!--?lit$652443$-->
+                    </div>
+                </div>
+            </div>
+        <sgpluse-opentextboxcontroller-view modelid="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="article-base-theme"><!---->
+            <div class="openTextBoxController__button-container">
+                <button tabindex="0" class="btn-text showhidebtn openTextBoxController__showButton show-answer show"><!--?lit$652443$-->Show All Answers</button>    
+                <button tabindex="0" class="btn-text showhidebtn openTextBoxController__hideButton hide-answer hide"><!--?lit$652443$-->Hide All Answers</button>    
+                <button class="btn-text resetbtn openTextBoxController__resetButton"><!--?lit$652443$-->Clear My Responses</button>         
+            </div>
+            <!--?lit$652443$--><hr>
+            <!--?lit$652443$-->
+                <div class="post-text" tabindex="0">
+                    <!--?lit$652443$--><span> <span style="padding-right:5px;float:left;font-family:arial;font-size:12px;">© 2017 - 2022 Cisco and/or its affiliates. All rights reserved. Cisco Public</span> </span>
+                </div>
+                   
+        </sgpluse-opentextboxcontroller-view><script></script></body>
+<script>
+    window.addEventListener("load", function () {
+      console.log("loaded");
+      document.querySelectorAll(".answergray").forEach(function (ele) {
+        ele.classList.add("u-display-none");
+      });
+      document.querySelectorAll(".hide-answer").forEach(function (ele) {
+        ele.classList.add("u-display-none");
+      });
+      document.querySelectorAll(".show-answer").forEach(function (ele) {
+        ele.addEventListener("click", function (e) {
+          e.currentTarget.nextElementSibling.classList.remove("u-display-none");
+          e.currentTarget
+            .closest(".question-container")
+            .querySelectorAll(".answergray")
+            .forEach(function (ele) {
+              ele.classList.remove("u-display-none");
+            });
+          ele.classList.add("u-display-none");
+        });
+      });
+      document.querySelectorAll(".hide-answer").forEach(function (ele) {
+        ele.addEventListener("click", function (e) {
+          e.currentTarget.previousElementSibling.classList.remove("u-display-none");
+          e.currentTarget
+            .closest(".question-container")
+            .querySelectorAll(".answergray")
+            .forEach(function (ele) {
+              ele.classList.add("u-display-none");
+            });
+          ele.classList.add("u-display-none");
+        });
+      });
+      var event = new Event("click", {
+        bubbles: true,
+        cancelable: true,
+      });
+      document
+        .querySelectorAll(".openTextBoxController__showButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            e.currentTarget.nextElementSibling.classList.remove("u-display-none");
+            ele.classList.add("u-display-none");
+            document.querySelectorAll(".show-answer").forEach(function (ele) {
+              ele.dispatchEvent(event);
+            });
+          });
+        });
+
+      document
+        .querySelectorAll(".openTextBoxController__hideButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            e.currentTarget.previousElementSibling.classList.remove("u-display-none");
+            ele.classList.add("u-display-none");
+            document.querySelectorAll(".hide-answer").forEach(function (ele) {
+              ele.dispatchEvent(event);
+            });
+          });
+        });
+
+      document
+        .querySelectorAll(".openTextBoxController__resetButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            document.querySelectorAll("textArea").forEach(function (ele) {
+              ele.value = "";
+            });
+          });
+        });
+
+      document
+      .querySelectorAll('textarea')
+      .forEach(function (ele){
+        ele.defaultValue = ele.defaultValue.replace(/<!--.*?-->/g, '');
+      })
+    });
+  </script>
+  </html>
